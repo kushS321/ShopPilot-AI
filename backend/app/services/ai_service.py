@@ -21,7 +21,7 @@ class AIService:
         self.db = db
         self.catalogue_service = CatalogueService(db)
 
-    def extract_preferences(self, query: str, existing_prefs: Optional[ExtractedPreferences] = None) -> Tuple_Extracted:
+    def extract_preferences(self, query: str, existing_prefs: Optional[ExtractedPreferences] = None) -> tuple[ExtractedPreferences, bool]:
         """
         Interprets natural language request. Attempts Gemini API if configured,
         or uses deterministic natural-language parsing with honest fallback flag.
